@@ -1,4 +1,4 @@
-#Galeria de filmes - Node.js
+Galeria de filmes - Node.js
 
 1 - Crie um projeto Node.js com o nome "galeria-filmes".
 
