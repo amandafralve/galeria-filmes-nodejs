@@ -13,4 +13,6 @@ Tecnologias utilizadas:
 ![image](https://github.com/user-attachments/assets/fbbb4ad9-8be6-4f2c-91d3-f7ef245c0ae3)
 
 ## Página Catálogo de Filmes
+![image](https://github.com/user-attachments/assets/95a4e730-9045-44f1-9fc8-63119528d13c)
+
 ![image](https://github.com/user-attachments/assets/d860acb6-3660-4758-ad82-2475ac686219)
