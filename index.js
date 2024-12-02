@@ -6,7 +6,7 @@ const app = express()
 // Importando Connection
 import connection from "./config/sequelize-config.js"
 
-import Galeria from "./models/Galeria.js"
+import Catalogo from "./models/Catalogo.js"
 
 // Realizando a conexão com o banco de dados
 connection.authenticate().then(() => {
@@ -16,7 +16,7 @@ connection.authenticate().then(() => {
 });
 
 //  Criando o banco de dados se ele não existir
-connection.query(`CREATE DATABASE IF NOT EXISTS galeria;`).then(()=> {
+connection.query(`CREATE DATABASE IF NOT EXISTS mubi;`).then(()=> {
     console.log("O banco de dados está criado.");
 }).catch((error) => {
     console.log(error)
@@ -30,22 +30,32 @@ const upload = multer({dest: "public/uploads/"})
 
 // ROTA PRINCIPAL
 app.get("/", (req,res) =>{
-    Galeria.findAll().then(imagens => {
-        res.render("index", {
-            imagens : imagens
+    res.render("index")
+});
+
+// ROTA Catalogo
+app.get("/films", (req,res) => {
+    Catalogo.findAll().then(filmes => {
+        res.render("films", {
+            filmes : filmes
         })
     }).catch((error) => {
         console.log(error)
     });
-});
+})
 
 // ROTA DE UPLOAD
 app.post("/upload", upload.single("file"),(req,res) => {
     const file = req.file.filename
-    Galeria.create({
-        file : file
+    const {titulo, diretor, pais, ano } = req.body;
+    Catalogo.create({
+        file : file,
+        titulo : titulo,
+        diretor : diretor,
+        pais : pais,
+        ano : ano
     });
-    res.redirect("/");
+    res.redirect("/films");
 });
 
 

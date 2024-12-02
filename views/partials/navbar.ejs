@@ -1,21 +1,40 @@
 
-<nav class="navbar" id="navbar">
-    <a class="navbar-brand" href="/">
-        <img class="ms-5" src="/imgs/mubi-logo-nav.png" alt="MUBI-Logo">
-    </a>
-    
-    <div class="container">
-        <ul class="row list-unstyled d-flex px-4">
-          <li class="col">
-            <a class="nav-link" href="#">EM EXIBIÇÃO</a>
-          </li>
-          <li class="col">
-            <a class="nav-link" href="#">NOTEBOOK</a>
-          </li>
-          <li class="col">
-            <a class="nav-link" href="#">ENTRAR</a>
-          </li>
+<nav>
+    <div class="d-flex">
+      <div class="logo">
+        <a class="" href="/">
+          <img class="" src="/imgs/mubi-logo-nav.png" alt="MUBI-Logo">
+        </a>
+      </div>
+
+      <div class="pesquisa">
+        <form class="pesquisa d-flex ms-5">
+          <img src="/imgs/lupa-pesquisa.svg" alt="">
+          <input class="caixa-pesq ms-2 mt-1" type="search" placeholder="Buscar" aria-label="Buscar">
+        </form>
+      </div>
+    </div>
+
+    <div class="d-flex">
+      <div class="links">
+        <ul class="nav-itens">
+          <li><a href="#">EM EXIBIÇÃO</a></li>
+          <li><a href="#">PARA ASSISTIR</a></li>
+          <li><a href="#">NOTEBOOK</a></li>
         </ul>
+      </div>
+
+      <div class="d-flex mx-3 ms-4">
+        <a href="#">
+          <img class="avatar" src="/imgs/avatar.png" alt="">
+        </a>
+        <div class="notif"></div>
+      </div>
+      
+      <div class="menu">
+        <a href="#">
+          <img class="menu-nav" src="/imgs/menu-nav.png" alt="">
+        </a>
+      </div>
     </div>
 </nav>
-<hr>
