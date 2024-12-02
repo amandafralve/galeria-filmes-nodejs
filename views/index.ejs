@@ -1,0 +1,23 @@
+<%- include('partials/header.ejs') %>
+<%- include('partials/navbar.ejs') %>
+
+  <div class="container mt-4">
+    <h1>Galeria de fotos:</h1>
+    <div class="card">
+        <div class="card-body">
+            <div class="row">
+            <% imagens.forEach(imagem => { %> 
+                <div class="col-md-3 m-auto">
+                    <img src="/uploads/<%= imagem.file %>" alt="Imagem" class="img-thumbnail">
+                </div>
+           <% }) %>
+            </div>
+        </div>
+        <form action="/upload" method="post" enctype="multipart/form-data" >
+            <input type="file" name="file" id="file" class="form-control" required><br><br>
+            <input type="submit" value="Enviar" class="btn btn-success w-100">
+        </form>
+    </div>
+  </div>
+
+<%- include('partials/footer.ejs') %>
